@@ -5,7 +5,8 @@ NimbleBrain's shared [Renovate](https://docs.renovatebot.com/) policy, run by th
 ## Files
 
 - `default.json` is the shared preset. It holds policy: the Monday-morning schedule in
-  Honolulu time, the 14-day wait before a release is proposed, monthly lock-file refreshes,
+  Honolulu time, the 14-day wait before a release is proposed, a monthly lock-file refresh schedule (off
+  unless the repo turns it on, see `default.json`),
   dashboard approval for majors, and security fixes that skip all of those.
 - `org-inherited-config.json` is read by the Mend app for every repo in the org. It sets only
   the config a new repo's onboarding PR proposes, so new repos start on the shared preset.
