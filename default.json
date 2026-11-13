@@ -1,0 +1,32 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "NimbleBrain's Renovate policy: when Renovate runs, how long a release waits, and how majors and security fixes are handled. Which managers run and which packages group together belong to each repo's own renovate.json.",
+  "extends": ["config:recommended"],
+  "timezone": "Pacific/Honolulu",
+  "schedule": ["before 6am on monday"],
+  "dependencyDashboard": true,
+  "labels": ["dependencies"],
+  "minimumReleaseAge": "14 days",
+  "lockFileMaintenance": {
+    "description": "A refresh has no single release date, so Renovate's release-age check would hold it pending forever. A repo that wants the 14-day window on refreshes enforces it in its package manager (bunfig.toml, or uv's exclude-newer).",
+    "enabled": true,
+    "schedule": ["before 6am on the first day of the month"],
+    "minimumReleaseAge": null
+  },
+  "major": {
+    "dependencyDashboardApproval": true
+  },
+  "vulnerabilityAlerts": {
+    "description": "A security fix skips the schedule, the release wait, and dashboard approval.",
+    "addLabels": ["security"],
+    "schedule": ["at any time"],
+    "minimumReleaseAge": null,
+    "dependencyDashboardApproval": false
+  },
+  "packageRules": [
+    {
+      "matchManagers": ["github-actions"],
+      "groupName": "github actions"
+    }
+  ]
+}

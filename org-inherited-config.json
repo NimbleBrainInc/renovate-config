@@ -1,0 +1,8 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Read by the Mend Renovate app for every repo in the org. It only sets what a new repo's onboarding PR proposes, so an existing renovate.json stays the whole of that repo's config.",
+  "onboardingConfig": {
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": ["local>NimbleBrainInc/renovate-config"]
+  }
+}
